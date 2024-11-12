@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #082338;
+    --second-bg-color: #0d304a;
+    --text-color: #ededed;
+    --main-color: #33ccff;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: .3s;
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);   
+    font-weight: 600;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+
+span {
+    color: #33ccff;
+}
+
+.navbar a {
+    font-size: 1.7rem;
+    display: inline-block;
+    color: #ededed;
+    font-weight: 500;
+    margin-left: 3.5rem;
+    transition: .3s;
+    opacity: 0;
+    animation: slideBottom .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a:hover,
+.navbar a.active  {
+    color: #33ccff;
+}
+
+#menu-icon {
+    font-size: 3rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 12% 2rem;
+    padding-bottom: 60px;
+    gap: 20px;
+}
+
+.about h2 {
+    font-size: 30px;
+    padding-top: 50px;
+}
+
+.about-content h3 {
+    font-size: 30px;
+    margin-bottom: 26px;
+    opacity: 0;
+    animation:  slideLeft 1s ease forwards;
+}
+
+.about-content p {
+    font-size: 16px;
+    font-weight: 500;
+    opacity: 0;
+    animation:  slideRight 1s ease forwards;
+}
+
+.about-img {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+
+.about-img img {
+    width: 90%;
+    border-radius: 50%;
+    border: 2px solid #33ccff;
+}
+
+.about-img .circle-spin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border-top: 2px solid #082338;
+    border-bottom: 2px solid #082338;
+    border-left: 2px solid #33ccff;
+    border-right: 2px solid #33ccff;
+}
+
+.about-content {
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: var(--main-color);
+    color: var(--bg-color);
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.btn:hover {
+    box-shadow: 0 0 25px #33ccff;
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-bar .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        text-align: center;
+    }
+
+    .nav-bar .menu li {
+        padding: 1em 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}

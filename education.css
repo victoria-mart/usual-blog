@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+body {
+    background: #082338;
+    color: #ededed;
+}
+
+::selection {
+    color: #ededed;
+    background: #33ccff;
+}
+
+span {
+    color: #33ccff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #082338;
+    --second-bg-color: #0d304a;
+    --text-color: #ededed;
+    --main-color: #33ccff;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: .3s;
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);   
+    font-weight: 600;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+
+span {
+    color: #33ccff;
+}
+
+.navbar a {
+    font-size: 1.7rem;
+    display: inline-flex;
+    color: #ededed;
+    font-weight: 500;
+    margin-left: 3.5rem;
+    transition: .3s;
+    opacity: 0;
+    animation: slideBottom .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a:hover,
+.navbar a.active  {
+    color: #33ccff;
+}
+
+#menu-icon {
+    font-size: 3rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+}
+
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.education {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.education h2 {
+    margin-top: 80px;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    text-align: center;
+    opacity: 0;
+    animation:  slideBottom 1s ease forwards;
+}
+
+.education .education-row {
+    display: flex;
+    gap: 20px;
+}
+
+.education p {
+    font-size: 20px;
+    padding-bottom: 50px;
+    padding-top: 10px;
+}
+
+.education {
+    padding: 50px;
+}
+
+.education h3 {
+    font-size: 30px;
+}
+
+.year {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+
+.education-container {
+    opacity: 0;
+    animation:  slideBottom 1s ease forwards;
+}
